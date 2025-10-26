@@ -7,7 +7,7 @@ import com.campus.CampusShare.entity.User;
 import com.campus.CampusShare.mapper.UserMapper;
 import com.campus.CampusShare.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder; // 改为接口
 import org.springframework.stereotype.Service;
 import com.campus.CampusShare.util.JwtUtil;
 
@@ -17,8 +17,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    // 关键修改：将BCryptPasswordEncoder改为PasswordEncoder
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public Result register(UserRegisterDTO dto) {
@@ -26,7 +27,7 @@ public class UserServiceImpl implements UserService {
         if (userMapper.existsByUsername(dto.getUsername())) {
             return Result.error("用户名已存在");
         }
-        // 密码加密
+        // 密码加密（实现类仍是BCryptPasswordEncoder，不影响功能）
         String encryptedPwd = passwordEncoder.encode(dto.getPassword());
         // 创建用户
         User user = new User();

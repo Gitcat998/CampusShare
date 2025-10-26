@@ -1,5 +1,10 @@
 package com.campus.CampusShare.entity;
 
+/**
+ * 配置实体
+ * @author 重庆财经学院实训团队
+ * @since 2025-10-26
+ */
 public class Config {
     private String key;
     private String value;

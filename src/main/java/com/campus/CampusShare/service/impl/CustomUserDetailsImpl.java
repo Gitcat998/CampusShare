@@ -1,4 +1,4 @@
-package com.campus.CampusShare.service;
+package com.campus.CampusShare.service.impl;
 
 import com.campus.CampusShare.entity.User;
 import com.campus.CampusShare.mapper.UserMapper;
@@ -8,8 +8,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * 自定义用户详情服务
+ * @author 重庆财经学院实训团队
+ * @since 2025-10-26
+ */
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsImpl implements UserDetailsService {
 
     @Autowired
     private UserMapper userMapper;

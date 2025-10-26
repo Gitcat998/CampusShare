@@ -8,6 +8,11 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Collections;
 
+/**
+ * 用户实体
+ * @author 重庆财经学院实训团队
+ * @since 2025-10-26
+ */
 @Data
 @TableName("user")
 public class User implements UserDetails {

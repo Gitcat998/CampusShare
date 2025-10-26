@@ -6,6 +6,11 @@ import com.campus.CampusShare.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 配置控制器
+ * @author 重庆财经学院实训团队
+ * @since 2025-10-26
+ */
 @RestController
 @RequestMapping("/api/config")
 public class ConfigController {
